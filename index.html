@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FocusList — Todo app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR DAILY SPACE Is BEHInd THE BELC</p>
+        <h1>Make room for<br /><span>what matters.</span></h1>
+        <p class="hero-copy">A calm place to capture your tasks, keep momentum, and finish the day feeling lighter.</p>
+      </div>
+      <div class="date-card">
+        <span id="dayName">Tuesday</span>
+        <strong id="dateNumber">29</strong>
+        <span id="monthName">October 2026</span>
+      </div>
+    </section>
+
+    <section class="progress-card" aria-label="Daily progress">
+      <div class="progress-heading">
+        <div>
+          <span class="section-label">TODAY'S PROGRESS</span>
+          <p><strong id="completedCount">0</strong> of <strong id="totalCount">0</strong> tasks complete</p>
+        </div>
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+    </section>
+
+    <section class="todo-section">
+      <div class="section-topline">
+        <h2>My tasks</h2>
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all" role="tab">All</button>
+          <button class="filter" data-filter="active" role="tab">Active</button>
+          <button class="filter" data-filter="completed" role="tab">Completed</button>
+        </div>
+      </div>
+
+      <form class="add-form" id="addForm">
+        <label class="sr-only" for="taskInput">New task</label>
+        <input id="taskInput" type="text" placeholder="What needs to be done?" maxlength="100" autocomplete="off" />
+        <button type="submit" aria-label="Add task">Add task <span>+</span></button>
+      </form>
+
+      <div class="task-list" id="taskList" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <div class="empty-icon">✦</div>
+        <h3>Nothing here yet</h3>
+        <p>Add a task above and start making progress.</p>
+      </div>
+    </section>
+
+    <footer><span class="footer-dot"></span> Your tasks stay saved in this browser</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
